@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.EntityEjemplo;
 import com.example.demo.entity.SneakerSell;
 import com.example.demo.service.ServiceSneaker;
 
@@ -18,6 +21,8 @@ import com.example.demo.service.ServiceSneaker;
 public class SneakerController {
 	@Autowired
 	ServiceSneaker service;
+	
+	
 	
 	@PostMapping("/create")
 	public SneakerSell create (@RequestBody SneakerSell sell) throws Exception {
@@ -37,6 +42,11 @@ public class SneakerController {
 	@PutMapping("/modify/{id}")
 	public SneakerSell modify (@PathVariable ("id") Long id, @RequestBody SneakerSell user) throws Exception {
 		return service.change(id, user);
+	}
+	
+	@PostMapping("/acomodar")
+	public EntityEjemplo acomodarNumero(@RequestBody ArrayList<Integer> list) {
+		return service.acomodar(list);
 	}
 	
 
