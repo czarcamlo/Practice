@@ -1,0 +1,21 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.demo.entity.SneakerSell;
+import com.example.demo.repository.SneakerRepository;
+
+@Service
+public class ServiceSneaker {
+	
+	@Autowired
+	SneakerRepository repo;
+	
+	public SneakerSell createSneaker (SneakerSell sneaker) {
+		repo.findByPhone(sneaker.)
+		
+	}
+
+}
